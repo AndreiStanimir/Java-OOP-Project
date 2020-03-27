@@ -1,83 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="932aca47-37f8-4c12-8649-4b9dd72d3896" name="Default Changelist" comment="" />
+    <list default="true" id="932aca47-37f8-4c12-8649-4b9dd72d3896" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module/module.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Ticket-Agency.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/entities/Agency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/entities/Concert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/entities/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/entities/Movie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/entities/Ticket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/servicies/FileReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/servicies/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/users/Administrator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/users/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ZfupCMPtW1o7k3UOZwS0pZGszd" />
-  <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="untitled104" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="company" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
-      <module name="Ticket-agency" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <module name="Ticket-Agency" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.servicies.Server" />
+      <module name="Ticket-Agency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.servicies.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -89,13 +93,88 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585242649509</updated>
+      <workItem from="1585242653194" duration="919000" />
+      <workItem from="1585246659659" duration="96000" />
+      <workItem from="1585246767663" duration="7081000" />
+      <workItem from="1585298024772" duration="6075000" />
     </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="626" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1585242653924">
+    <state x="615" y="192" width="703" height="656" key="#Main" timestamp="1585247019327">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="626" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585242653924" />
+    <state x="615" y="192" width="703" height="656" key="#Main/0.0.1920.1040@0.0.1920.1040" timestamp="1585247019327" />
+    <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585247148285">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585247148285" />
+    <state x="765" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1585303951355">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585303951355" />
+    <state x="696" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585246907165">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="696" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585246907165" />
+    <state x="803" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1585246924919">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="803" y="412" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585246924919" />
+    <state x="740" y="253" key="FileChooserDialogImpl" timestamp="1585247124410">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="253" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585247124410" />
+    <state width="1879" height="282" key="GridCell.Tab.0.bottom" timestamp="1585246754744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585246754744" />
+    <state width="1879" height="282" key="GridCell.Tab.0.center" timestamp="1585246754744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585246754744" />
+    <state width="1879" height="282" key="GridCell.Tab.0.left" timestamp="1585246754744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585246754744" />
+    <state width="1879" height="282" key="GridCell.Tab.0.right" timestamp="1585246754744">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1879" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585246754744" />
+    <state x="536" y="226" key="NewModule_or_Project.wizard" timestamp="1585247134975">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="536" y="226" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1585247134975" />
+    <state x="493" y="166" key="SettingsEditor" timestamp="1585248727680">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="493" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585248727680" />
+    <state width="498" height="445" key="SwitcherDM" timestamp="1585304083338">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="445" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1585304083338" />
+    <state x="626" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1585298161624">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="626" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585298161624" />
+    <state x="670" y="202" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585303290590">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="670" y="202" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585303290590" />
+    <state x="567" y="122" width="785" height="795" key="find.popup" timestamp="1585304279053">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="567" y="122" width="785" height="795" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585304279053" />
+    <state x="239" y="147" key="new project wizard" timestamp="1585247053012">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="239" y="147" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1585247053012" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585304269962">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585304269962" />
   </component>
 </project>
