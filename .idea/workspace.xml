@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="932aca47-37f8-4c12-8649-4b9dd72d3896" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module/module.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ticket-Agency.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/entities/Agency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/entities/Concert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/entities/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/entities/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/entities/Ticket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/servicies/FileReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/servicies/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/users/Administrator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/users/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/users/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/Exceptions/Exceptions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/entities/Agency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/entities/Agency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/entities/Concert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/entities/Concert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/entities/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/entities/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/entities/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/entities/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/entities/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/entities/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/servicies/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/servicies/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/users/Administrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/users/Administrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/users/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/users/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/users/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +46,7 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="jdk.selected.JAVA_MODULE" value="11" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RunManager" selected="Application.Server">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -97,6 +92,7 @@
       <workItem from="1585246659659" duration="96000" />
       <workItem from="1585246767663" duration="7081000" />
       <workItem from="1585298024772" duration="6075000" />
+      <workItem from="1585310742027" duration="11058000" />
     </task>
     <servers />
   </component>
@@ -112,10 +108,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585247148285" />
-    <state x="765" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1585303951355">
+    <state x="765" y="239" key="#com.intellij.ide.util.MemberChooser" timestamp="1585324109740">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585303951355" />
+    <state x="765" y="239" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585324109740" />
     <state x="696" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585246907165">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -148,33 +144,37 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="536" y="226" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1585247134975" />
-    <state x="493" y="166" key="SettingsEditor" timestamp="1585248727680">
+    <state x="493" y="166" key="SettingsEditor" timestamp="1585313147481">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="493" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585248727680" />
-    <state width="498" height="445" key="SwitcherDM" timestamp="1585304083338">
+    <state x="493" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585313147481" />
+    <state width="498" height="445" key="SwitcherDM" timestamp="1585320246560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="498" height="445" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1585304083338" />
-    <state x="626" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1585298161624">
+    <state width="498" height="445" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1585320246560" />
+    <state x="429" y="271" key="caller.chooser.dialog" timestamp="1585320283248">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="626" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585298161624" />
+    <state x="429" y="271" key="caller.chooser.dialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585320283248" />
+    <state x="626" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1585310744791">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="626" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585310744791" />
     <state x="670" y="202" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585303290590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="670" y="202" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585303290590" />
-    <state x="567" y="122" width="785" height="795" key="find.popup" timestamp="1585304279053">
+    <state x="567" y="122" width="785" height="795" key="find.popup" timestamp="1585313339422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="567" y="122" width="785" height="795" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585304279053" />
+    <state x="567" y="122" width="785" height="795" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585313339422" />
     <state x="239" y="147" key="new project wizard" timestamp="1585247053012">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="239" y="147" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1585247053012" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585304269962">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585321978453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585304269962" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585321978453" />
   </component>
 </project>
