@@ -9,10 +9,8 @@ import com.users.Client;
 import com.users.User;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.*;
 import java.time.LocalDateTime;
-import java.util.LinkedList;
-import java.util.List;
 
 public class Server {
     //map<pair<String,String>,User>
@@ -20,7 +18,7 @@ public class Server {
     static int ticketId = 1;
 
     static ArrayList<Client> clients;
-    static ArrayList<Administrator> admins;
+    static HashMap<String,Administrator> admins;
 
     public static int getNewEventId() {
         return ++eventId;
@@ -32,36 +30,39 @@ public class Server {
 
     private static void initServer() {
         clients = new ArrayList<Client>();
-        admins = new ArrayList<Administrator>();
+        admins = new HashMap<String, Administrator>();
 
         registerUser(new Administrator("Andrei"));
         registerUser(new Client("Ana", 23, 12, new ArrayList<Ticket>()));
 
-
+        //read events from file
     }
 
     private static void closeServer() {
-        // TO DO
+        // save all events to file
     }
 
     public static void main(String[] args) {
         initServer();
 
-        Administrator a = admins.get(0);
+        // adm
+        Administrator a = admins.get("Andrei");
         Agency agency = new Agency();
         LocalDateTime date = LocalDateTime.now();
 
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date, 10, 10));
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(20), 10, 10));
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(10), 10, 10));
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(15), 10, 10));
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(60), 10, 10));
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(5), 10, 10));
+        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date, 5, 10,"Andreea"));
+        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(20), 2, 10,"Andreea"));
+        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(10), 5, 10,"Andreea"));
+        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(15), 5, 10,"Andreea"));
+        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(60), 5, 10,"Andreea"));
+        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(5), 5, 10,"Andreea"));
 
+        //Users searches for events
         LinkedList<Event> events = agency.getEventsByName("con");
         for (Event e : events) {
             System.out.println(e);
         }
+
         Client client = clients.get(0);
 
         client.buy_tickets(events.get(2), 3);
@@ -70,7 +71,7 @@ public class Server {
 
         client.buy_tickets(events.get(2), 3);
 
-//        System.out.println(client.getBought_tickets());
+        System.out.println(client.getBought_tickets());
 
 
     }
@@ -88,7 +89,7 @@ public class Server {
     }
 
     public static boolean registerUser(Administrator a) {
-        admins.add(a);
+        admins.put(a.getName(),a);
         return true;
     }
 
