@@ -4,6 +4,9 @@ import java.util.*;
 
 public class Agency {
     LinkedList<Event> events; // sorted by date
+
+
+
     int budget;
 
     public Agency() {
@@ -16,6 +19,15 @@ public class Agency {
         for (Event e : events) {
             if (e.getName().contains(name)) {
                 eventsMatch.add(e);
+            }
+        }
+        return eventsMatch;
+    }
+    public <T> LinkedList<T> getEventsByType(Class<T> type) { //test
+        LinkedList<T> eventsMatch = new LinkedList<T>();
+        for (Event e : events) {
+            if (e.getClass() ==type) {
+                eventsMatch.add((T)e);
             }
         }
         return eventsMatch;
@@ -50,5 +62,16 @@ public class Agency {
             }
         }
         events.addLast(e);
+    }
+    public void deleteEvent(Event e)
+    {
+        events.remove(e);
+    }
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
     }
 }
