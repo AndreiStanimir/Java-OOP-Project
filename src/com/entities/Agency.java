@@ -4,14 +4,11 @@ import java.util.*;
 
 public class Agency {
     LinkedList<Event> events; // sorted by date
-
-
-
-    int budget;
+    float budget;
 
     public Agency() {
         events = new LinkedList<Event>();
-        int budget = 0;
+        float budget = 0;
     }
 
     public LinkedList<Event> getEventsByName(String name) {
@@ -23,11 +20,12 @@ public class Agency {
         }
         return eventsMatch;
     }
+
     public <T> LinkedList<T> getEventsByType(Class<T> type) { //test
         LinkedList<T> eventsMatch = new LinkedList<T>();
         for (Event e : events) {
-            if (e.getClass() ==type) {
-                eventsMatch.add((T)e);
+            if (e.getClass() == type) {
+                eventsMatch.add((T) e);
             }
         }
         return eventsMatch;
@@ -55,23 +53,24 @@ public class Agency {
 //            ;
 //        }
 
-        for (int i = 0; i < events.size()-1; i++) {
-            if(e.getDate().compareTo(events.get(i).getDate())<=0){
-                events.add(i,e);
+        for (int i = 0; i < events.size() - 1; i++) {
+            if (e.getDate().compareTo(events.get(i).getDate()) <= 0) {
+                events.add(i, e);
                 return;
             }
         }
         events.addLast(e);
     }
-    public void deleteEvent(Event e)
-    {
+
+    public void deleteEvent(Event e) {
         events.remove(e);
     }
-    public int getBudget() {
+
+    public float getBudget() {
         return budget;
     }
 
-    public void setBudget(int budget) {
+    public void setBudget(float budget) {
         this.budget = budget;
     }
 }

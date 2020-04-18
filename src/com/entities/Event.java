@@ -3,17 +3,19 @@ package com.entities;
 import com.servicies.Server;
 
 import java.util.ArrayList;
-import java.time.LocalDateTime;import java.util.List;
+import java.time.LocalDateTime;
+import java.util.List;
 
 public class Event {
     String name;
     int id;
-    float price;
+    float price; //hosting price
     String location;
     LocalDateTime date;
     int seats;
     float baseTicketPrice;
     ArrayList<Ticket> tickets;
+
     public Event(String name, float price, String location, LocalDateTime date, int seats, float baseTicketPrice) {
         this.name = name;
         this.price = price;
@@ -23,7 +25,7 @@ public class Event {
         this.baseTicketPrice = baseTicketPrice;
         this.id = Server.getNewEventId();
 
-        tickets=new ArrayList<Ticket>(seats);
+        tickets = new ArrayList<Ticket>(seats);
         tickets.size();
         for (int i = 0; i < seats; i++) {
             //tickets.set(i,new Ticket(this));
@@ -40,8 +42,8 @@ public class Event {
 //    }
 
     public List<Ticket> reserveTickets(int number) {
-        List<Ticket> t=tickets.subList(tickets.size()-number,tickets.size());
-        return  t;
+        List<Ticket> t = tickets.subList(tickets.size() - number, tickets.size());
+        return t;
     }
 
 
@@ -82,4 +84,41 @@ public class Event {
                 ", tickets=" + tickets +
                 '}';
     }
+
+    public ArrayList<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(ArrayList<Ticket> tickets) {
+        this.tickets = tickets;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
+    public void setBaseTicketPrice(float baseTicketPrice) {
+        this.baseTicketPrice = baseTicketPrice;
+    }
+
 }

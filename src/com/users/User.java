@@ -5,9 +5,12 @@ import java.util.Objects;
 public abstract class User {
     int id;
     String name;
+    String password;
 
-    public User(String name) {
+    public User(String name, String password) {
+        id = 0;
         this.name = name;
+        this.password = password;
     }
 
     @Override
@@ -25,6 +28,14 @@ public abstract class User {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
 

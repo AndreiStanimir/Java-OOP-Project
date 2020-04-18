@@ -11,21 +11,21 @@ public class Client extends User {
     int age;
     List<Ticket> bought_tickets;
 
-    public Client(String name, float balance, int age, List<Ticket> bought_tickets) {
-        super(name);
+    public Client(String name, String password, float balance, int age, List<Ticket> bought_tickets) {
+        super(name, password);
         this.balance = balance;
         this.age = age;
         this.bought_tickets = bought_tickets;
     }
 
     public void buy_ticket(Event e) {
-        buy_tickets(e,1);
+        buy_tickets(e, 1);
     }
 
-    public void buy_tickets(Event event, int number)  {
+    public void buy_tickets(Event event, int number) {
         float price = event.getBaseTicketPrice() * number;
         try {
-            if(number<=0)
+            if (number <= 0)
                 throw new InvalidParameterException("Ticket number must be positive ");
             if (balance < price)
                 throw new UnsupportedOperationException("Not enough money");
@@ -36,11 +36,13 @@ public class Client extends User {
 //            {
 //                System.err.println(e);
 //            }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+    }
+
+    public void refund_ticket(Ticket t) {
 
     }
 
@@ -73,4 +75,5 @@ public class Client extends User {
                 ", name='" + name + '\'' +
                 "}\n";
     }
+
 }
