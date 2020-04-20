@@ -3,9 +3,13 @@ package com.users;
 import com.entities.Agency;
 import com.entities.Event;
 
-public class Administrator extends User {
-    public Administrator(String name, String password) {
+import java.io.Serializable;
+
+public class Administrator extends User implements Serializable {
+    int rootLevel;
+    public Administrator(String name, String password, int rootLevel) {
         super(name, password);
+        this.rootLevel=rootLevel;
     }
 
     public void CreateEvent(Agency a, Event e) {

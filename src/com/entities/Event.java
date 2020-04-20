@@ -1,12 +1,14 @@
 package com.entities;
 
+import com.servicies.AuditService;
 import com.servicies.Server;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.time.LocalDateTime;
 import java.util.List;
 
-public class Event {
+public class Event implements Serializable {
     String name;
     int id;
     float price; //hosting price
@@ -43,6 +45,7 @@ public class Event {
 
     public List<Ticket> reserveTickets(int number) {
         List<Ticket> t = tickets.subList(tickets.size() - number, tickets.size());
+        AuditService.addLogMessage("Reverserve "+number +" tickets");
         return t;
     }
 

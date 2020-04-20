@@ -5,9 +5,9 @@ import java.time.LocalDateTime;
 public class Concert extends Event {
     String singerName;
 
-    public Concert(String name, float price, String location, LocalDateTime date, int seats, float baseTicket, String singer_name) {
+    public Concert(String name, float price, String location, LocalDateTime date, int seats, float baseTicket, String singerName) {
         super(name, price, location, date, seats, baseTicket);
-        this.singerName = singer_name;
+        this.singerName = singerName;
     }
 
     public String getSingerName() {

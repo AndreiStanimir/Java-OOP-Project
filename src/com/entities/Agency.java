@@ -1,11 +1,13 @@
 package com.entities;
 
+import com.servicies.AuditService;
+
+import java.io.Serializable;
 import java.util.*;
 
-public class Agency {
-    LinkedList<Event> events; // sorted by date
+public class Agency implements Serializable {
     float budget;
-
+    LinkedList<Event> events; // sorted by date
     public Agency() {
         events = new LinkedList<Event>();
         float budget = 0;
@@ -60,10 +62,13 @@ public class Agency {
             }
         }
         events.addLast(e);
+        AuditService.addLogMessage("Add event "+ e.toString());
+
     }
 
     public void deleteEvent(Event e) {
         events.remove(e);
+        AuditService.addLogMessage("Remove event "+ e.toString());
     }
 
     public float getBudget() {

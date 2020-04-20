@@ -2,11 +2,12 @@ package com.entities;
 
 import com.servicies.Server;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.LocalDateTime;
 
-public class Ticket {
-    public static Ticket null_ticket;
+public class Ticket implements Serializable {
+    //public static Ticket null_ticket;
     int id;
     LocalDateTime date;
     float price;
@@ -22,6 +23,12 @@ public class Ticket {
         this.id = id;
         date = event.date;
         price = event.baseTicketPrice;
+    }
+
+    public Ticket(int id, LocalDateTime date, float price) {
+        this.id = id;
+        this.date = date;
+        this.price = price;
     }
 
     public float getPrice() {

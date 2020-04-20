@@ -3,10 +3,11 @@ package com.users;
 import com.entities.Event;
 import com.entities.Ticket;
 
+import java.io.Serializable;
 import java.security.InvalidParameterException;
 import java.util.List;
 
-public class Client extends User {
+public class Client extends User implements Serializable {
     float balance;
     int age;
     List<Ticket> bought_tickets;

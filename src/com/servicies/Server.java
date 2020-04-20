@@ -6,13 +6,9 @@ import com.entities.Event;
 import com.entities.Ticket;
 import com.users.Administrator;
 import com.users.Client;
-import com.users.User;
 
-import java.lang.reflect.Field;
-import java.sql.Array;
 import java.time.LocalDateTime;
 import java.util.*;
-import java.time.LocalDateTime;
 
 public class Server {
     //map<pair<String,String>,User>
@@ -34,8 +30,11 @@ public class Server {
         clients = new ArrayList<Client>();
         admins = new HashMap<String, Administrator>();
 
-        registerUser(new Administrator("Andrei", "123"));
-        registerUser(new Client("Ana", "123", 23, 12, new ArrayList<Ticket>()));
+        FileService.readFromFile(clients,Client.class,"clients.txt");
+        FileService.readFromFile(admins,Administrator.class,"admins.txt");
+        //FileService.readFromFile();
+        //registerUser(new Administrator("Andrei", "123", 0));
+        //registerUser(new Client("Ana", "123", 23, 12, new ArrayList<Ticket>()));
 
         //read events from file
     }
@@ -73,8 +72,17 @@ public class Server {
 
         client.buy_tickets(events.get(2), 3);
         try {
-            File_Reader.writeToFile(clients, Client.class, "clients.txt");
-            System.out.println(File_Reader.toCSV(events, Event.class));
+            FileService.writeToFile(clients, Client.class, "clients.txt");
+            //File_Reader.writeToFile(admins, Administrator.class,"admins.txt");
+            FileService.writeToFile(agency, Agency.class, "agencies.txt");
+
+            FileService.writeToFile(client.getBought_tickets(), Ticket.class, "tickets.txt");
+            List<Ticket> tickets = new ArrayList<Ticket>();
+            FileService.readFromFile(tickets, Ticket.class, "tickets.txt");
+            for (var t : tickets) {
+                System.out.println(t);
+            }
+            //System.out.println(ReadFile.toCSV(events, Event.class));
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -96,12 +104,21 @@ public class Server {
     }
 
     public static boolean registerUser(Administrator a) {
+        if (admins.containsKey(a.getName())) {
+            return false;
+        }
         admins.put(a.getName(), a);
+        FileService.appendToFile(a, Administrator.class, "admins.txt");
+        AuditService.addLogMessage("Register administrator "+ a.toString());
         return true;
     }
 
     public static boolean registerUser(Client c) {
+        if (clients.stream().anyMatch(other -> c.getId() == other.getId()))
+            return false;
         clients.add(c);
+        FileService.appendToFile(c, Client.class, "clients.txt");
+        AuditService.addLogMessage("Register client "+ c.toString());
         return true;
     }
 
