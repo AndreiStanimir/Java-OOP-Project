@@ -12,6 +12,12 @@ public class Client extends User implements Serializable {
     int age;
     List<Ticket> bought_tickets;
 
+    public Client(String id, String name, String password, float balance, int age, List<Ticket> bought_tickets) {
+        super(id, name, password);
+        this.balance = balance;
+        this.age = age;
+        this.bought_tickets = bought_tickets;
+    }
     public Client(String name, String password, float balance, int age, List<Ticket> bought_tickets) {
         super(name, password);
         this.balance = balance;
@@ -47,16 +53,16 @@ public class Client extends User implements Serializable {
 
     }
 
-    public void setBalance(float balance) {
-        this.balance = balance;
-    }
-
     public List<Ticket> getBought_tickets() {
         return bought_tickets;
     }
 
     public float getBalance() {
         return balance;
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
     }
 
     public int getAge() {

@@ -1,9 +1,6 @@
 package com.servicies;
 
-import com.entities.Agency;
-import com.entities.Concert;
-import com.entities.Event;
-import com.entities.Ticket;
+import com.entities.*;
 import com.users.Administrator;
 import com.users.Client;
 
@@ -29,13 +26,12 @@ public class Server {
     private static void initServer() {
         clients = new ArrayList<Client>();
         admins = new HashMap<String, Administrator>();
+        registerUser(new Administrator("Andrei", "123", 0));
+        registerUser(new Client("Ana", "123", 23, 12, new ArrayList<Ticket>()));
 
-        FileService.readFromFile(clients,Client.class,"clients.txt");
-        FileService.readFromFile(admins,Administrator.class,"admins.txt");
+        //FileService.readFromFile(clients, Client.class, "clients.csv");
+        //FileService.readFromFile(admins, Administrator.class, "admins.csv");
         //FileService.readFromFile();
-        //registerUser(new Administrator("Andrei", "123", 0));
-        //registerUser(new Client("Ana", "123", 23, 12, new ArrayList<Ticket>()));
-
         //read events from file
     }
 
@@ -50,35 +46,42 @@ public class Server {
         Administrator a = admins.get("Andrei");
         Agency agency = new Agency();
         LocalDateTime date = LocalDateTime.now();
+        List<Event> events=new ArrayList<>();
+        events.add(new Concert("concert", 12345, "Bucharest", date.plusDays(20), 2, 10, "Andreea"));
+        events.add(new Concert("concert", 12345, "Bucharest", date.plusDays(1), 2, 10, "Andreea"));
+        events.add(new Concert("concert", 12345, "Bucharest", date.plusDays(50), 2, 10, "Andreea"));
+        events.add(new Concert("concert", 12345, "Bucharest", date.plusDays(10), 2, 10, "Andreea"));
+        events.add(new Concert("concert", 12345, "Bucharest", date.plusDays(20), 2, 10, "Andreea"));
+        events.add(new Movie("movie1", 12345, "Bucharest", date.plusDays(20), 2, 10, "Disney"));
+        events.add(new Movie("movie1", 12345, "Bucharest", date.plusDays(30), 2, 10, "Disney"));
+        events.add(new Movie("movie1", 12345, "Bucharest", date.plusDays(250), 2, 10, "Disney"));
 
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date, 5, 10, "Andreea"));
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(20), 2, 10, "Andreea"));
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(10), 5, 10, "Andreea"));
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(15), 5, 10, "Andreea"));
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(60), 5, 10, "Andreea"));
-        a.CreateEvent(agency, new Concert("concert", 12345, "Bucharest", date.plusDays(5), 5, 10, "Andreea"));
+        FileService.writeToFile(events,Event.class,"events.csv");
+        FileService.readFromFile(events,Event.class,"events.csv");
+
+        System.out.println(events);
 
         //Users searches for events
-        LinkedList<Event> events = agency.getEventsByName("con");
-        for (Event e : events) {
+        LinkedList<Event> events2 = agency.getEventsByName("con");
+        for (Event e : events2) {
             System.out.println(e);
         }
 
         Client client = clients.get(0);
 
-        client.buy_tickets(events.get(2), 3);
+        client.buy_tickets(events2.get(2), 3);
 
         client.setBalance(100);
 
-        client.buy_tickets(events.get(2), 3);
+        client.buy_tickets(events2.get(2), 3);
         try {
-            FileService.writeToFile(clients, Client.class, "clients.txt");
-            //File_Reader.writeToFile(admins, Administrator.class,"admins.txt");
-            FileService.writeToFile(agency, Agency.class, "agencies.txt");
+            FileService.writeToFile(clients, Client.class, "clients.csv");
+            //File_Reader.writeToFile(admins, Administrator.class,"admins.csv");
+            FileService.writeToFile(agency, Agency.class, "agencies.csv");
 
-            FileService.writeToFile(client.getBought_tickets(), Ticket.class, "tickets.txt");
+            FileService.writeToFile(client.getBought_tickets(), Ticket.class, "tickets.csv");
             List<Ticket> tickets = new ArrayList<Ticket>();
-            FileService.readFromFile(tickets, Ticket.class, "tickets.txt");
+            FileService.readFromFile(tickets, Ticket.class, "tickets.csv");
             for (var t : tickets) {
                 System.out.println(t);
             }
@@ -108,8 +111,8 @@ public class Server {
             return false;
         }
         admins.put(a.getName(), a);
-        FileService.appendToFile(a, Administrator.class, "admins.txt");
-        AuditService.addLogMessage("Register administrator "+ a.toString());
+        FileService.appendToFile(a, Administrator.class, "admins.csv");
+        AuditService.addLogMessage("Register administrator " + a.toString());
         return true;
     }
 
@@ -117,8 +120,8 @@ public class Server {
         if (clients.stream().anyMatch(other -> c.getId() == other.getId()))
             return false;
         clients.add(c);
-        FileService.appendToFile(c, Client.class, "clients.txt");
-        AuditService.addLogMessage("Register client "+ c.toString());
+        FileService.appendToFile(c, Client.class, "clients.csv");
+        AuditService.addLogMessage("Register client " + c.toString());
         return true;
     }
 

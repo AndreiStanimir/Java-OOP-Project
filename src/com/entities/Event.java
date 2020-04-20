@@ -28,7 +28,6 @@ public class Event implements Serializable {
         this.id = Server.getNewEventId();
 
         tickets = new ArrayList<Ticket>(seats);
-        tickets.size();
         for (int i = 0; i < seats; i++) {
             //tickets.set(i,new Ticket(this));
             tickets.add(new Ticket(this));
@@ -43,35 +42,62 @@ public class Event implements Serializable {
 //        return tickets;
 //    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public List<Ticket> reserveTickets(int number) {
         List<Ticket> t = tickets.subList(tickets.size() - number, tickets.size());
-        AuditService.addLogMessage("Reverserve "+number +" tickets");
+        AuditService.addLogMessage("Reverserve " + number + " tickets");
         return t;
     }
 
-
     public float getPrice() {
         return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
     }
 
     public String getLocation() {
         return location;
     }
 
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
     public LocalDateTime getDate() {
         return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
 
     public int getSeats() {
         return seats;
     }
 
+    public void setSeats(int seats) {
+        this.seats = seats;
+    }
+
     public float getBaseTicketPrice() {
         return baseTicketPrice;
     }
 
+    public void setBaseTicketPrice(float baseTicketPrice) {
+        this.baseTicketPrice = baseTicketPrice;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -94,34 +120,6 @@ public class Event implements Serializable {
 
     public void setTickets(ArrayList<Ticket> tickets) {
         this.tickets = tickets;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public void setDate(LocalDateTime date) {
-        this.date = date;
-    }
-
-    public void setSeats(int seats) {
-        this.seats = seats;
-    }
-
-    public void setBaseTicketPrice(float baseTicketPrice) {
-        this.baseTicketPrice = baseTicketPrice;
     }
 
 }

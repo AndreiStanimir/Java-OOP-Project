@@ -7,12 +7,17 @@ import java.io.Serializable;
 
 public class Administrator extends User implements Serializable {
     int rootLevel;
+
+    public Administrator(String id, String name, String password, int rootLevel) {
+        super(id, name, password);
+        this.rootLevel = rootLevel;
+    }
     public Administrator(String name, String password, int rootLevel) {
         super(name, password);
-        this.rootLevel=rootLevel;
+        this.rootLevel = rootLevel;
     }
 
-    public void CreateEvent(Agency a, Event e) {
+    public void createEvent(Agency a, Event e) {
         a.AddEvent(e);
     }
 

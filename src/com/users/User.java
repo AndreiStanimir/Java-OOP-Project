@@ -1,14 +1,21 @@
 package com.users;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public abstract class User {
-    int id;
+    String id;
     String name;
     String password;
 
     public User(String name, String password) {
-        id = 0;
+        id = UUID.randomUUID().toString();
+        this.name = name;
+        this.password = password;
+    }
+
+    public User(String id, String name, String password) {
+        this.id = id;
         this.name = name;
         this.password = password;
     }
@@ -18,10 +25,10 @@ public abstract class User {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        return id == user.id;
+        return id.equals(user.id);
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

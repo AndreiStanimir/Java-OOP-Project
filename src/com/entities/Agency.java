@@ -8,6 +8,7 @@ import java.util.*;
 public class Agency implements Serializable {
     float budget;
     LinkedList<Event> events; // sorted by date
+
     public Agency() {
         events = new LinkedList<Event>();
         float budget = 0;
@@ -62,13 +63,13 @@ public class Agency implements Serializable {
             }
         }
         events.addLast(e);
-        AuditService.addLogMessage("Add event "+ e.toString());
+        AuditService.addLogMessage("Add event " + e.toString());
 
     }
 
     public void deleteEvent(Event e) {
         events.remove(e);
-        AuditService.addLogMessage("Remove event "+ e.toString());
+        AuditService.addLogMessage("Remove event " + e.toString());
     }
 
     public float getBudget() {
