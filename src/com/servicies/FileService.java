@@ -27,35 +27,11 @@ public class FileService {
             T newObject = null;
 
             if (tClass == Ticket.class) {
-                while ((currentLine = bufferedReader.readLine()) != null) {
-                    String[] words = currentLine.split(",");
-                    Ticket obj = new Ticket(Integer.parseInt(words[0]), LocalDateTime.parse(words[1]), Float.parseFloat(words[2]));
-                    list.add((T) obj);
-                }
+                ReadTicket(list, bufferedReader);
             } else if (tClass == Concert.class) {
-                while ((currentLine = bufferedReader.readLine()) != null) {
-                    String[] words = currentLine.split(",");
-                    Concert obj = new Concert(words[0],
-                            Float.parseFloat(words[1]),
-                            words[2],
-                            LocalDateTime.parse(words[3]),
-                            Integer.parseInt(words[4]),
-                            Float.parseFloat(words[5]),
-                            words[6]);
-                    list.add((T) obj);
-                }
+                readConcert(list, bufferedReader);
             } else if (tClass == Movie.class) {
-                while ((currentLine = bufferedReader.readLine()) != null) {
-                    String[] words = currentLine.split(",");
-                    Movie obj = new Movie(words[0],
-                            Float.parseFloat(words[1]),
-                            words[2],
-                            LocalDateTime.parse(words[3]),
-                            Integer.parseInt(words[4]),
-                            Float.parseFloat(words[5]),
-                            words[6]);
-                    list.add((T) obj);
-                }
+                readMovie(list, bufferedReader);
             }
 //            else if (tClass == Client.class) {
 //                while ((currentLine = bufferedReader.readLine()) != null) {
@@ -73,12 +49,51 @@ public class FileService {
                 bufferedReader.close();
             } catch(
                     Exception e){
-                System.out.println(e);
+                System.out.println(e.toString());
             }
 
         }
 
-        public static <T > void readFromFile (HashMap < String, T > hashMap, Class tClass, String fileName){
+    private static <T> void readMovie(List<T> list, BufferedReader bufferedReader) throws IOException {
+        String currentLine;
+        while ((currentLine = bufferedReader.readLine()) != null) {
+            String[] words = currentLine.split(",");
+            Movie obj = new Movie(words[0],
+                    Float.parseFloat(words[1]),
+                    words[2],
+                    LocalDateTime.parse(words[3]),
+                    Integer.parseInt(words[4]),
+                    Float.parseFloat(words[5]),
+                    words[6]);
+            list.add((T) obj);
+        }
+    }
+
+    private static <T> void readConcert(List<T> list, BufferedReader bufferedReader) throws IOException {
+        String currentLine;
+        while ((currentLine = bufferedReader.readLine()) != null) {
+            String[] words = currentLine.split(",");
+            Concert obj = new Concert(words[0],
+                    Float.parseFloat(words[1]),
+                    words[2],
+                    LocalDateTime.parse(words[3]),
+                    Integer.parseInt(words[4]),
+                    Float.parseFloat(words[5]),
+                    words[6]);
+            list.add((T) obj);
+        }
+    }
+
+    private static <T> void ReadTicket(List<T> list, BufferedReader bufferedReader) throws IOException {
+        String currentLine;
+        while ((currentLine = bufferedReader.readLine()) != null) {
+            String[] words = currentLine.split(",");
+            Ticket obj = new Ticket(Integer.parseInt(words[0]), LocalDateTime.parse(words[1]), Float.parseFloat(words[2]));
+            list.add((T) obj);
+        }
+    }
+
+    public static <T > void readFromFile (HashMap < String, T > hashMap, Class tClass, String fileName){
             try {
                 InputStreamReader inputStreamReader = new java.io.FileReader(fileName);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -103,12 +118,8 @@ public class FileService {
                 bufferedReader.close();
             } catch (
                     Exception e) {
-                System.out.println(e);
+                System.out.println(e.toString());
             }
-        }
-
-        public static void readUsers () {
-
         }
 
         public static <T > void writeToFile (List < T > objects, Class tClass, String fileName){
@@ -141,7 +152,7 @@ public class FileService {
         public static <T > String toCSV(List < T > objects, Class tClass) {
             StringBuilder csvData = new StringBuilder();
 
-            ArrayList<Field> fields = new ArrayList<Field>(Arrays.asList(tClass.getDeclaredFields()));
+            ArrayList<Field> fields = new ArrayList<>(Arrays.asList(tClass.getDeclaredFields()));
 
             if (tClass.getSuperclass() != null) {
                 var list = Arrays.asList(tClass.getSuperclass().getDeclaredFields());
@@ -163,7 +174,7 @@ public class FileService {
                         csvData.append(value.toString());
                         csvData.append(",");
                     } catch (IllegalAccessException e) {
-                        System.out.println(e);
+                        System.out.println(e.toString());
                     }
 
                 }
