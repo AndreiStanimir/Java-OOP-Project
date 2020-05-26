@@ -1,33 +1,41 @@
 package com.servicies;
 
+import com.Repository.AdminRepository;
+import com.Repository.ClientRepository;
+import com.entities.Ticket;
 import com.entities.*;
 import com.users.Administrator;
 import com.users.Client;
 
+import java.sql.Driver;
 import java.time.LocalDateTime;
 import java.util.*;
 
-public class Server {
+public class MainServices {
     //map<pair<String,String>,User>
-    static int eventId = 1;
-    static int ticketId = 1;
+    //static int eventId = 1;
+    //static int ticketId = 1;
 
     static ArrayList<Client> clients;
     static HashMap<String, Administrator> admins;
 
-    public static int getNewEventId() {
-        return ++eventId;
+    public static String getNewEventId() {
+        return UUID.randomUUID().toString();
     }
 
-    public static int getNewTicketId() {
-        return ++ticketId;
+    public static String getNewTicketId() {
+        return UUID.randomUUID().toString();
     }
 
     private static void initServer() {
         clients = new ArrayList<Client>();
         admins = new HashMap<String, Administrator>();
-        registerUser(new Administrator("Andrei", "123", 0));
-        registerUser(new Client("Ana", "123", 23, 12, new ArrayList<Ticket>()));
+        Administrator admin=new Administrator("Andrei","1234",1);
+        Client client=new Client("Ana", "123", 23, 12);
+        registerUser(admin);
+        registerUser(client);
+
+
 
         //FileService.readFromFile(clients, Client.class, "clients.csv");
         //FileService.readFromFile(admins, Administrator.class, "admins.csv");
@@ -73,22 +81,22 @@ public class Server {
 
         client.setBalance(100);
 
-        client.buy_tickets(events2.get(2), 3);
-        try {
-            FileService.writeToFile(clients, Client.class, "clients.csv");
-            //File_Reader.writeToFile(admins, Administrator.class,"admins.csv");
-            FileService.writeToFile(agency, Agency.class, "agencies.csv");
-
-            FileService.writeToFile(client.getBought_tickets(), Ticket.class, "tickets.csv");
-            List<Ticket> tickets = new ArrayList<Ticket>();
-            FileService.readFromFile(tickets, Ticket.class, "tickets.csv");
-            for (var t : tickets) {
-                System.out.println(t);
-            }
-            //System.out.println(ReadFile.toCSV(events, Event.class));
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+//        client.buy_tickets(events2.get(2), 3);
+//        try {
+//            FileService.writeToFile(clients, Client.class, "clients.csv");
+//            //File_Reader.writeToFile(admins, Administrator.class,"admins.csv");
+//            FileService.writeToFile(agency, Agency.class, "agencies.csv");
+//
+//            //FileService.writeToFile(client.getBought_tickets(), Ticket.class, "tickets.csv");
+//            List<Ticket> tickets = new ArrayList<Ticket>();
+//            FileService.readFromFile(tickets, Ticket.class, "tickets.csv");
+//            for (var t : tickets) {
+//                System.out.println(t);
+//            }
+//            //System.out.println(ReadFile.toCSV(events, Event.class));
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
         //System.out.println(client.getBought_tickets());
 
 
@@ -111,6 +119,7 @@ public class Server {
             return false;
         }
         admins.put(a.getName(), a);
+        AdminRepository.getInstance().insert(a);
         FileService.appendToFile(a, Administrator.class, "admins.csv");
         AuditService.addLogMessage("Register administrator " + a.toString());
         return true;
@@ -120,6 +129,7 @@ public class Server {
         if (clients.stream().anyMatch(other -> c.getId() == other.getId()))
             return false;
         clients.add(c);
+        ClientRepository.getInstance().insert(c);
         FileService.appendToFile(c, Client.class, "clients.csv");
         AuditService.addLogMessage("Register client " + c.toString());
         return true;

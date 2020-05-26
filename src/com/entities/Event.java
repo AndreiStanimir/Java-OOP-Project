@@ -1,7 +1,8 @@
 package com.entities;
 
 import com.servicies.AuditService;
-import com.servicies.Server;
+import com.servicies.MainServices;
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class Event implements Serializable {
     String name;
-    int id;
+    String id;
     float price; //hosting price
     String location;
     LocalDateTime date;
@@ -25,7 +26,7 @@ public class Event implements Serializable {
         this.date = date;
         this.seats = seats;
         this.baseTicketPrice = baseTicketPrice;
-        this.id = Server.getNewEventId();
+        this.id = MainServices.getNewEventId();
 
         tickets = new ArrayList<Ticket>(seats);
         for (int i = 0; i < seats; i++) {
@@ -34,7 +35,11 @@ public class Event implements Serializable {
         }
     }
 
-    public int getId() {
+    public Event() {
+
+    }
+
+    public String getId() {
         return id;
     }
 
@@ -42,7 +47,7 @@ public class Event implements Serializable {
 //        return tickets;
 //    }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

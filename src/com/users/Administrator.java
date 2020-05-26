@@ -8,12 +8,12 @@ import java.io.Serializable;
 public class Administrator extends User implements Serializable {
     int rootLevel;
 
-    public Administrator(String id, String name, String password, int rootLevel) {
-        super(id, name, password);
-        this.rootLevel = rootLevel;
-    }
     public Administrator(String name, String password, int rootLevel) {
         super(name, password);
+        this.rootLevel = rootLevel;
+    }
+    public Administrator(String id, String name, String password, int rootLevel) {
+        super(id,name, password);
         this.rootLevel = rootLevel;
     }
 
@@ -27,6 +27,14 @@ public class Administrator extends User implements Serializable {
             //TO DO
             return;
         a.setBudget(a.getBudget() + amount);
+    }
+
+    public int getRootLevel() {
+        return rootLevel;
+    }
+
+    public void setRootLevel(int rootLevel) {
+        this.rootLevel = rootLevel;
     }
 
     public void DeleteEvent(Agency a, Event e) {

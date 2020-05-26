@@ -12,17 +12,16 @@ public class Client extends User implements Serializable {
     int age;
     List<Ticket> bought_tickets;
 
-    public Client(String id, String name, String password, float balance, int age, List<Ticket> bought_tickets) {
+    public Client(String id, String name, String password, float balance, int age) {
         super(id, name, password);
         this.balance = balance;
         this.age = age;
-        this.bought_tickets = bought_tickets;
     }
-    public Client(String name, String password, float balance, int age, List<Ticket> bought_tickets) {
+    public Client(String name, String password, float balance, int age) {
         super(name, password);
         this.balance = balance;
         this.age = age;
-        this.bought_tickets = bought_tickets;
+
     }
 
     public void buy_ticket(Event e) {
@@ -51,10 +50,6 @@ public class Client extends User implements Serializable {
 
     public void refund_ticket(Ticket t) {
 
-    }
-
-    public List<Ticket> getBought_tickets() {
-        return bought_tickets;
     }
 
     public float getBalance() {

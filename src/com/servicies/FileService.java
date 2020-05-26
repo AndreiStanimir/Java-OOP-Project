@@ -1,7 +1,5 @@
 package com.servicies;
 
-import javax.swing.*;
-import java.awt.*;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.time.LocalDateTime;
@@ -10,10 +8,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import com.entities.Ticket;
 import com.entities.*;
 import com.users.*;
-
-import java.util.function.Consumer;
 
 public class FileService {
     public static <T> void readFromFile(List<T> list, Class tClass, String fileName) {
@@ -88,8 +85,8 @@ public class FileService {
         String currentLine;
         while ((currentLine = bufferedReader.readLine()) != null) {
             String[] words = currentLine.split(",");
-            Ticket obj = new Ticket(Integer.parseInt(words[0]), LocalDateTime.parse(words[1]), Float.parseFloat(words[2]));
-            list.add((T) obj);
+            //Ticket obj = new Ticket(words[0], Float.parseFloat(words[2]));
+            //list.add((T) obj);
         }
     }
 

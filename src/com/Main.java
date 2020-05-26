@@ -1,10 +1,10 @@
 package com;
 
-import com.servicies.Server;
+import com.servicies.MainServices;
 
 public class Main {
 
     public static void main(String[] args) {
-        com.servicies.Server.main(args);
+        MainServices.main(args);
     }
 }
